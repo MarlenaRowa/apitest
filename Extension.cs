@@ -11,10 +11,15 @@ namespace Catalog
             return new ItemDto
             {
                 Id = item.Id,
-                Name = item.Name,
+                Name = new NameDto { value=item.Name.value},
+                //Name = item.Name,
                 Type = item.Type,
-                versionOnRobot = item.versionOnRobot
+                version = new VersionDto { value=item.version.value}
+                //version = item.version
             };
+
+           
+
         }
     }
 }

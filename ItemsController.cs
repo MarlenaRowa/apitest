@@ -25,10 +25,14 @@ namespace API
             var items = repository.GetItems().Select(item => new ItemDto
             {
                 Id = item.Id,
+                Name = new NameDto { value = item.Name.value },
+                //Name = item.Name,
                 Type = item.Type,
-                Name = item.Name,
-                versionOnRobot = item.versionOnRobot
+                version = new VersionDto { value = item.version.value }
+                //version = item.version
             }) ;
+
+
 
             return items;
         }
@@ -57,9 +61,11 @@ namespace API
             Item item = new()
             {
                 Id = itemDto.Id,
+                Name = new Name { value = itemDto.Name },
+                //Name = item.Name,
                 Type = itemDto.Type,
-                Name = itemDto.Name,
-                versionOnRobot = itemDto.versionOnRobot,
+                version = new Version { value = itemDto.versionOnRobot }
+                //version = item.version
 
             };
 
@@ -82,8 +88,10 @@ namespace API
 
             Item updatedItem = existingItem with
             {
-                Name = itemDto.Name,
-                versionOnRobot = itemDto.versionOnRobot
+                Name = new Name { value=itemDto.Name},
+                //versionOnRobot = itemDto.versionOnRobot
+                version = new Version { value = itemDto.versionOnRobot}
+                
                 
             };
 

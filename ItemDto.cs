@@ -6,11 +6,23 @@
             public string Id { get; init; }
 
             public string Type { get; set; }
-            public string Name { get; init; }
+            public NameDto Name { get; set; }
 
-            public int versionOnRobot { get; init; }
+            public VersionDto version { get; init; }    
 
 
         }
+
+    public record NameDto
+    {
+        public string? value { get; set; }
+        public string type { get; set; } = "String";
+    }
+
+    public record VersionDto
+    {   
+        public float value { get; set; }
+        public string type { get; set; } = "Float";
+    }
 
 }

@@ -10,11 +10,12 @@ namespace API
 
         {
 
-            new Item { Id = "Blasius1", Type = "Program", Name = "blasius1", versionOnRobot = 1 },
+            //new Item { Id = "Blasius1", Type = "Program", Name = "blasius1", versionOnRobot = 1 },
 
-            new Item { Id = "Blasius2", Type = "Program", Name = "blasius2", versionOnRobot = 1 },
+            //new Item { Id = "Blasius2", Type = "Program", Name = "blasius2", versionOnRobot = 1 },
 
-            new Item { Id = "Blasius5", Type = "Program", Name = "blasius5", versionOnRobot = 1 }
+            //new Item { Id = "Blasius5", Type = "Program", Name = "blasius5", versionOnRobot = 1 },
+            new Item { Id="Blasius1", Name = new Name { value="blasius1",}, Type="Program", version=new Version { value=1} }
         };
 
         public IEnumerable<Item> GetItems()
