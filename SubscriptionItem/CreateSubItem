@@ -1,33 +1,33 @@
-namespace Api.SubItems
+namespace API
 
 {
 
 public class SubItem 
 
 {
-    public List<DatumDto> data {get; set;}
+    public List<Datum> data {get; set;}
     public string subscriptionId {get;set;}
 
 }
 
-public class DatumDto
+public class Datum
 {
 public string id {get; set;}
-public IversionOnRobotSubDto versionOnRobotSub{get;set;}
+public IversionOnRobotSub versionOnRobotSub{get;set;}
 public string type {get; set;} = "Program";
 
 }
 
-public class IversionOnRobotSubDto
+public class IversionOnRobotSub
 
 {
-    public MetadataDto metadata {get; set;}
+    public Metadata metadata {get; set;}
     public string type {get; set;} ="Float";
     public double value {get; set;}
     
 }
 
-public class MetadataDto
+public class Metadata
 {
     
 }
