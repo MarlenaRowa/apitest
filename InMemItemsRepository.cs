@@ -1,4 +1,4 @@
-﻿
+﻿using Api.SubItems;
 
 namespace API
 {
@@ -18,6 +18,8 @@ namespace API
             new Item { Id="Blasius1", Name = new Name { value="blasius1",}, Type="Program", version=new Version { value=1} }
         };
 
+
+// ich weiß nicht was ich habe hier falsch gemacht, ich was sicher es funktionieren aber jetzt fehler kommt 
         private readonly List<SubItem> subItems = new List<SubItem>()
 
         {
