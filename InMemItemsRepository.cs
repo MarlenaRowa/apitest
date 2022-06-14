@@ -18,6 +18,31 @@ namespace API
             new Item { Id="Blasius1", Name = new Name { value="blasius1",}, Type="Program", version=new Version { value=1} }
         };
 
+        private readonly List<SubItem> subItems = new List<SubItem>()
+
+        {
+              new SubItem
+        {
+            data = new List<Datum>
+            {
+                new Datum()
+                {
+                    id = "Blasius1",
+                    versionOnRobotSub = new IversionOnRobotSub()
+                    {
+                        metadata = new Metadata(),
+                        value = 1
+                    },
+                    type ="Program"
+                }
+            },
+            subscriptionId = ""
+        },
+
+        };
+
+  
+
         public IEnumerable<Item> GetItems()
         {
             return items;
