@@ -20,12 +20,12 @@ namespace API
     // schickt aktuelle id name und versionOnRobot zurück an api und diese weiter zur subscription
     // GET / items
     [ApiController]
-    [Route("v2/subscription/")]
     public class SubscribtionController
     {   
 
         // We get id, name, version from the subscription 
         [HttpPost]
+        [Route("v2/subscription/trigger")]
         public void SubscriptionNotification(ProgramDto programDto)
         {
             Console.WriteLine("This is the data {0}, {1}, {2}", programDto.Id, programDto.Name, programDto.Version);
@@ -39,7 +39,7 @@ namespace API
         // Programm handler sends back the id, name and versionOnRobot
         //TODO send to subscription
         [HttpPost]
-        [Route("/handler")]
+        [Route("v2/subscription/handler")]
         public void ProgrammHandlerNotification(ProgramDto programDto)
         {
             System.Console.WriteLine("This is the data from the programhandler {0}, {1}, {2}", programDto.Id, programDto.Name, programDto.Version);
