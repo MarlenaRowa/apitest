@@ -6,7 +6,6 @@ namespace API
 
 
         private readonly List<Item> items = new()
-
         {
 
             //new Item { Id = "Blasius1", Type = "Program", Name = "blasius1", versionOnRobot = 1 },
