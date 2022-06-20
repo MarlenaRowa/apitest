@@ -14,23 +14,36 @@ namespace API
     //und ein subscription trigger, aber ich kann mich noch nicht vostellen was und wie soll es funktionieren 
     
 
-    // prüfen programmhandler --> aktuelle Version
-    // schicken id programmname --> welche version am robot
-    // versionOnRobot id, name zurückschicken
-
 
     // bekommt von Subscription id, name ,version
     // zum programmhandler gehen mit id, name
     // schickt aktuelle id name und versionOnRobot zurück an api und diese weiter zur subscription
     // GET / items
     [ApiController]
-    [Route("v2/subscription")]
+    [Route("v2/subscription/")]
     public class SubscribtionController
     {   
-        [HttpPost]
-        public void GetSubscription()
-        {
 
+        // We get id, name, version from the subscription 
+        [HttpPost]
+        public void SubscriptionNotification(ProgramDto programDto)
+        {
+            Console.WriteLine("This is the data {0}, {1}, {2}", programDto.Id, programDto.Name, programDto.Version);
+            // TODO
+            // Go to programmhandler and which sends the versionOnRobot back to this api (to /handler)
         }
+
+
+
+
+        // Programm handler sends back the id, name and versionOnRobot
+        //TODO send to subscription
+        [HttpPost]
+        [Route("/handler")]
+        public void ProgrammHandlerNotification(ProgramDto programDto)
+        {
+            System.Console.WriteLine("This is the data from the programhandler {0}, {1}, {2}", programDto.Id, programDto.Name, programDto.Version);
+        }
+
     }
 }
