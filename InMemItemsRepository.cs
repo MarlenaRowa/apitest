@@ -1,5 +1,4 @@
 ﻿using Api.SubItems;
-
 namespace API
 {
     public class InMemItemsRepository : IItemsRepository
@@ -21,11 +20,10 @@ namespace API
 
 // ich weiß nicht was ich habe hier falsch gemacht, ich was sicher es funktionieren aber jetzt fehler kommt 
         private readonly List<SubItem> subItems = new List<SubItem>()
-
         {
               new SubItem
         {
-            data = new List<Datum>
+            data = new List<Datum>()
             {
                 new Datum()
                 {
