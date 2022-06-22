@@ -1,35 +1,45 @@
-namespace Api.SubItems
+namespace API
 
-{
 
-public class SubItem 
+    {
 
-{
-    public List<DatumDto> data {get; set;}
-    public string subscriptionId {get;set;}
+    public class ItemSub
+    {
+        public string id { get; set; }
+        public string type { get; set; }
+        public NameSub name { get; set; }
+        public VersionOnRobot versionOnRobot { get; set; }
+        public DateTime time_index { get; set; }
+    }
+    public class NameSub
+    {
+        public string type { get; set; }
+        public string value { get; set; }
+        public Metadata metadata { get; set; }
+    }
 
-}
 
-public class DatumDto
-{
-public string id {get; set;}
-public IversionOnRobotSubDto versionOnRobotSub{get;set;}
-public string type {get; set;} = "Program";
+    public class VersionOnRobot
+    {
+        public string type { get; set; }
+        public int value { get; set; }
+        public Metadata metadata { get; set; }
+    }
+    public class Metadata
+    {
+        public DateCreated dateCreated { get; set; }
+        public DateModified dateModified { get; set; }
+    }
+    public class DateCreated
+    {
+        public string type { get; set; }
+        public DateTime value { get; set; }
+    }
 
-}
-
-public class IversionOnRobotSubDto
-
-{
-    public MetadataDto metadata {get; set;}
-    public string type {get; set;} ="Float";
-    public double value {get; set;}
-    
-}
-
-public class MetadataDto
-{
-    
-}
+    public class DateModified
+    {
+        public string type { get; set; }
+        public DateTime value { get; set; }
+    }
 
 }

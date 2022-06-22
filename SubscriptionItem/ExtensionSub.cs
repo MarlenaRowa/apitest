@@ -4,34 +4,26 @@ using API;
 namespace CatalogSub
 {
 
-    // public static class ExtensionsSub
-    // {
-    //     public static item AsDto(this Item item)
-    //     {
-    //         return new SubItemDto()
-    //         {
-                
-                
-    //          data = new List<Datum>
-    //             {
-    //             new Datum()
-    //             {
-    //                 id = itemSub.Id,
-    //                 versionOnRobotSub = new IversionOnRobotSub()
-    //                 {
-    //                     metadata = new Metadata(),
-    //                     value = itemSub.value
-    //                 },
-    //                 type = itemSub.type
-    //             }
-    //          },
-    //             subscriptionId = itemSub.subscriptionId
+    public static class ExtensionsSub
+    {
+        public static ItemSubDto AsDto(this ItemSub itemSub)
+        {
+            return new ItemSubDto()
+            {
 
-    //         };
 
-           
+                id = itemSub.id,
+                type = itemSub.type,
+                name = new NameSubDto { value = itemSub.name.value},
+                versionOnRobot = new VersionOnRobotDto { value = itemSub.versionOnRobot.value},
+                time_index = itemSub.time_index,
 
-    //     }
 
-    // }
+            };
+
+
+
+        }
+
+    }
 }

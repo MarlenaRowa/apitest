@@ -1,4 +1,4 @@
-﻿using Api.SubItems;
+﻿
 namespace API
 {
     public class InMemItemsRepository : IItemsRepository
@@ -16,40 +16,51 @@ namespace API
             new Item { Id="Blasius1", Name = new Name { value="blasius1",}, Type="Program", version=new Version { value=1} }
         };
 
-
-// ich weiß nicht was ich habe hier falsch gemacht, ich was sicher es funktionieren aber jetzt fehler kommt 
-        private readonly List<SubItem> subItems = new List<SubItem>()
+        private readonly List<ItemSub> itemsSub = new()
         {
-              new SubItem
-        {
-            data = new List<Datum>()
+            new ItemSub
             {
-                new Datum()
-                {
-                    id = "Blasius1",
-                    versionOnRobotSub = new IversionOnRobotSub()
-                    {
-                        metadata = new Metadata(),
-                        value = 1
-                    },
-                    type ="Program"
-                }
-            },
-            subscriptionId = ""
-        },
-
+                id = "Blasius3",
+                type = "Program",
+                name = new NameSub { value = "blasius1" },
+                versionOnRobot = new VersionOnRobot{ value = 1 },
+                time_index = DateTime.Now,
+            }
         };
+        // ich weiß nicht was ich habe hier falsch gemacht, ich was sicher es funktionieren aber jetzt fehler kommt 
+        //private readonly List<SubItem> subItems = new List<SubItem>()
+        //{
+        //      new SubItem
+        //{
+        //    data = new List<Datum>()
+        //    {
+        //        new Datum()
+        //        {
+        //            id = "Blasius1",
+        //            versionOnRobotSub = new IversionOnRobotSub()
+        //            {
+        //                metadata = new Metadata(),
+        //                value = 1
+        //            },
+        //            type ="Program"
+        //        }
+        //    },
+        //    subscriptionId = ""
+        //},
 
-  
+        //};
+
+
 
         public IEnumerable<Item> GetItems()
         {
             return items;
 
         }
-
-
-
+        public void CreateItemSub(ItemSub itemSub)
+        {
+            itemsSub.Add(itemSub);
+        }
 
         public void CreateItem(Item item)
         {
@@ -72,6 +83,16 @@ namespace API
         }
 
 
+        public IEnumerable<ItemSub> GetItemsSub()
+        {
+              return itemsSub;
+        }
+
+        public ItemSub GetItemsSub(string id)
+        {
+              return itemsSub.Where(itemSub => itemSub.id == id).SingleOrDefault();
+
+        }
     }
 
 

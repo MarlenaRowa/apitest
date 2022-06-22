@@ -6,7 +6,7 @@ namespace API
         public string? Id { get; init; }
 
         public string? Type { get; set; }
-        public Name? Name { get; set; }
+        public Name Name { get; set; }
 
         public Version? version { get; init; }
 
